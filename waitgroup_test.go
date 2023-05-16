@@ -29,3 +29,4 @@ func TestWaitGroup(t *testing.T) {
 }
 
 // test komentar lur
+// tambah komentar lur
