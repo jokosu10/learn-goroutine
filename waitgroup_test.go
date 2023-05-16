@@ -27,6 +27,3 @@ func TestWaitGroup(t *testing.T) {
 	group.Wait()
 	fmt.Println("Selesai")
 }
-
-// test komentar lur
-// tambah komentar lur
