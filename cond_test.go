@@ -27,11 +27,18 @@ func TestCond(t *testing.T) {
 		go WaitCondition(i)
 	}
 
+	// one by one using signal
+	// go func() {
+	// 	for i := 0; i < 10; i++ {
+	// 		time.Sleep(1 * time.Second)
+	// 		cond.Signal()
+	// 	}
+	// }()
+
+	// using broadcast
 	go func() {
-		for i := 0; i < 10; i++ {
-			time.Sleep(1 * time.Second)
-			cond.Signal()
-		}
+		time.Sleep(1 * time.Second)
+		cond.Broadcast()
 	}()
 
 	group.Wait()
